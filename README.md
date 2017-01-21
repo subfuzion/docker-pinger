@@ -1,5 +1,7 @@
 # subfuzion/pinger
 
+[On Docker Hub](https://hub.docker.com/r/subfuzion/pinger/)
+
 Simple service for demo purposes. Responds with `pong` to a `GET` request at: `http://<host>:<port>/ping`, and logs to `stdout`.
 
 ## Running pinger
