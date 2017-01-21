@@ -3,6 +3,6 @@
 #
 set -e
 ./make.sh
-docker build -t subfuzion/pinger . \
-	&& docker tag subfuzion/pinger subfuzion/pinger:$(cat VERSION | sed 's/[:space:]*$//')
-
+docker build -t subfuzion/pinger \
+	-t subfuzion/pinger:latest \
+	-t subfuzion/pinger:$(cat VERSION | sed 's/[:space:]*$//') .

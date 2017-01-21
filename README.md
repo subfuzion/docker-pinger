@@ -46,7 +46,7 @@ by setting `Connection: close` in the response header.
 
 `run.sh` - convenience script for `docker run ...`
 
-`service-start.sh` - convenience script for `docker service create ...`
+`service-create.sh` - convenience script for `docker service create ...`
 
 `service-stop.sh` - convenience script for `docker service rm ...`
 
