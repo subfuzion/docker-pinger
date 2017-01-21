@@ -1,6 +1,6 @@
 #!/bin/bash
 # publishes pinger to docker hub
 #
-docker push appcelerator/pinger:latest \
-	&& docker push appcelerator/pinger:$(cat VERSION | sed 's/[:space:]*$//')
+docker push subfuzion/pinger:latest \
+	&& docker push subfuzion/pinger:$(cat VERSION | sed 's/[:space:]*$//')
 

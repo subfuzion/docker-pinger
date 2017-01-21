@@ -1,4 +1,4 @@
 FROM alpine
-COPY pinger /usr/local/bin
-CMD [ "pinger" ]
+COPY bin/pinger.alpine /usr/local/bin/pinger
+ENTRYPOINT [ "pinger" ] 
 

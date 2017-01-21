@@ -1,14 +1,14 @@
-# appcelerator/pinger
+# subfuzion/pinger
 
 Simple service for demo purposes. Responds with `pong` to a `GET` request at: `http://<host>:<port>/ping`, and logs to `stdout`.
 
 ## Running pinger
 
-    $ docker run -it --rm -p 3000:3000 --name pinger appcelerator/pinger
+    $ docker run -it --rm -p 3000:3000 --name pinger subfuzion/pinger
 
 or
 
-    $ docker service create -p 3000:3000 --name pinger appcelerator/pinger
+    $ docker service create -p 3000:3000 --name pinger subfuzion/pinger
 
 ## Scaling pinger
 
@@ -21,7 +21,7 @@ Confirm all the replicas are running as the service scales to the desired amount
     $ docker service 
     $ docker service ls --filter name=pinger
     ID            NAME    REPLICAS  IMAGE                COMMAND
-    bfjh7nervm3z  pinger  3/3       appcelerator/pinger
+    bfjh7nervm3z  pinger  3/3       subfuzion/pinger
 
 Then test
 
@@ -40,7 +40,7 @@ by setting `Connection: close` in the response header.
 
 `make.sh` - runs the go compiler in a container to create an alpine binary
 
-`build.sh` - builds an alpine-based image: `appcelerator/pinger`
+`build.sh` - builds an alpine-based image: `subfuzion/pinger`
 
 `run.sh` - convenience script for `docker run ...`
 
