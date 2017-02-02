@@ -23,10 +23,10 @@ func main() {
 		// the connection).
 		w.Header().Set("Connection", "close")
 		response := fmt.Sprintf("[%s] pong", hostname)
-		fmt.Printf("sending response: %s\n", response)
+		log.Printf("sending response: %s\n", response)
 		fmt.Fprintln(w, response)
 	})
 
-	fmt.Printf("listening on %s\n", port)
+	log.Printf("listening on %s\n", port)
 	log.Fatal(http.ListenAndServe(port, nil))
 }
