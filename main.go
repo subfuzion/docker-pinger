@@ -23,6 +23,7 @@ func main() {
 		// the connection).
 		w.Header().Set("Connection", "close")
 		response := fmt.Sprintf("[%s] pong", hostname)
+		fmt.Printf("sending response: %s\n", response)
 		fmt.Fprintln(w, response)
 	})
 
