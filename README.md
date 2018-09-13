@@ -40,9 +40,11 @@ by setting `Connection: close` in the response header.
 
 ## Development
 
-`make.sh` - runs the go compiler in a container to create an alpine binary
+The following shell scripts are in the `scripts/` directory:
 
 `build.sh` - builds an alpine-based image: `subfuzion/pinger`
+
+`push.sh` - pushes the image to Docker Hub
 
 `run.sh` - convenience script for `docker run ...`
 
