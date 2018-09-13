@@ -8,16 +8,19 @@ import (
 	"strings"
 )
 
-const port = ":3000"
+var port = ":3000"
+
+func init() {
+	if p := os.Getenv("PORT"); p != "" {
+		if !strings.HasPrefix(p, ":") {
+			p = ":" + p
+		}	
+		port = p
+	}
+}
 
 func main() {
 	http.HandleFunc("/ping", func(w http.ResponseWriter, req *http.Request) {
-		if p := os.Getenv("PORT"); p != "" {
-			if !strings.HasPrefix(p, ":") {
-				p = ":" + p
-			}	
-		}
-
 		hostname, err := os.Hostname()
 		if err != nil {
 			panic(err)
