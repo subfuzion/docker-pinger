@@ -5,12 +5,19 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 )
 
 const port = ":3000"
 
 func main() {
 	http.HandleFunc("/ping", func(w http.ResponseWriter, req *http.Request) {
+		if p := os.Getenv("PORT"); p != "" {
+			if !strings.HasPrefix(p, ":") {
+				p = ":" + p
+			}	
+		}
+
 		hostname, err := os.Hostname()
 		if err != nil {
 			panic(err)
@@ -22,6 +29,7 @@ func main() {
 		// (this isn't an issue when using curl since it automatically closes
 		// the connection).
 		w.Header().Set("Connection", "close")
+
 		response := fmt.Sprintf("[%s] pong", hostname)
 		log.Printf("sending response: %s\n", response)
 		fmt.Fprintln(w, response)
